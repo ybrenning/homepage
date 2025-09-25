@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <title>yannick</title>
+  <style>
+    h1 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+    }
+    marquee {
+      font-size: 14px;
+    }
+    body { background:#ffffff; color:#000000; font-family:monospace, sans-serif; }
+    a { color:#0000cc; }
+    #cursorBox {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    #cursorBox::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: black;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 
+        39% 35%
+        );
+      transform: scale(1.2);
+    }
+
+    #cursorBox::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: yellow;
+      clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 
+        39% 35%
+        );
+    }
+</style>
+  </style>
+</head>
+<body>
+  <h1>homepage.html</h1>
+  <p>webdesign is my passion, but i'm also interested in deep learning and natural language processing :^)</p>
+
+  <p><a href="https://github.com/ybrenning" target="_blank">github</a> | <a href="cv.pdf" target="_blank">cv</a> | <a href="#">guestbook</a></p>
+
+  <marquee>under construction 🚧</marquee>
+
+  <div id="cursorBox"></div>
+  <script>
+    const box = document.getElementById('cursorBox');
+    document.onmousemove = function(e) {
+      box.style.left = e.pageX + 'px';
+      box.style.top = e.pageY + 'px';
+    };
+  </script>
+</body>
+</html>
